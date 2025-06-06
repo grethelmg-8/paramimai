@@ -5,7 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi terroncito 💗</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background: url('img/papel-antiguo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            height: 100vh;
+            overflow: hidden; /* Bloquea completamente el scroll */
+        }
+
+        #intro {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            flex-direction: column;
+        }
+
+        #start-btn {
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, gold, crimson);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 20px gold;
+            animation: pulse 1.5s infinite;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px gold; }
+            50% { box-shadow: 0 0 30px gold; }
+            100% { box-shadow: 0 0 10px gold; }
+        }
+
+        #start-btn:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <div id="intro">

@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const startBtn = document.getElementById("start-btn");
-    const intro = document.getElementById("intro");
     const cartaTexto = document.getElementById("carta-texto");
     const heartBtn = document.getElementById("heart-btn");
-
     const brilloAudio = new Audio("brillo.mp3");
     const papelAudio = new Audio("papel.mp3");
 
-    startBtn.addEventListener("click", () => {
+    // Espera el primer clic del usuario para activar el audio de brillo
+    const iniciarSonido = () => {
         brilloAudio.play();
-        intro.style.display = "none"; // Oculta el intro permanentemente
-    });
+        document.removeEventListener("click", iniciarSonido);
+    };
+    document.addEventListener("click", iniciarSonido);
 
+    // Mostrar la carta automáticamente
+    cartaTexto.classList.remove("hidden");
+    cartaTexto.classList.add("visible");
+
+    // Corazón para mostrar/ocultar con sonido de papel
     heartBtn.addEventListener("click", () => {
         if (cartaTexto.classList.contains("hidden")) {
             papelAudio.play();
@@ -23,5 +27,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
-
